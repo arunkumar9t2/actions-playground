@@ -25,4 +25,5 @@ jobs:
           echo $GRADLE_HOME
           cd ..
           ./gradlew resolveDependencies --no-daemon -g $GRADLE_HOME
-          killall -9 java
+          find $GRADLE_HOME -name "*.lock" -type f -delete
+          find $GRADLE_HOME -name "gc.properties" -type f -delete
