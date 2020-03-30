@@ -18,8 +18,7 @@ jobs:
       - name: Prepare gradle cache
         run: |
           cd docker
-          CURRENT_DIR=$(pwd)
-          GRADLE_HOME="$(CURRENT_DIR)/cache/.gradle"
+          export GRADLE_HOME="$(pwd)/cache/.gradle"
           echo $GRADLE_HOME
           cd ..
           ./gradlew resolveDependencies -g $(GRADLE_HOME)
