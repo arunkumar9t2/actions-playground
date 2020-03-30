@@ -33,7 +33,7 @@ jobs:
         with:
           name: ${{ github.repository }}/gradledockerimage
           username: ${{ github.actor }}
-          password: $GITHUB_TOKEN
+          password: ${{ secrets.DOCKER_TOKEN }}
           registry: docker.pkg.github.com
           workdir: ${{ github.workspace }}/docker
           dockerfile: Dockerfile
