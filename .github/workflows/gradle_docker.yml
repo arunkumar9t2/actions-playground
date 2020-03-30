@@ -27,3 +27,5 @@ jobs:
           ./gradlew resolveDependencies --no-daemon -g $GRADLE_HOME
           find $GRADLE_HOME -name "*.lock" -type f -delete
           find $GRADLE_HOME -name "gc.properties" -type f -delete
+          sudo apt-get install tree
+          tree $GRADLE_HOME
