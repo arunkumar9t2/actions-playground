@@ -18,7 +18,7 @@ jobs:
       - name: Prepare gradle cache
         run: |
           cd docker
-          CURRENT_DIR=$(shell pwd)
+          CURRENT_DIR=$(pwd)
           GRADLE_HOME=$(CURRENT_DIR/cache/.gradle)
           echo $GRADLE_HOME
           cd ..
