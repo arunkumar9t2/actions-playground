@@ -24,4 +24,4 @@ jobs:
           export GRADLE_HOME="$(pwd)/cache/.gradle"
           echo $GRADLE_HOME
           cd ..
-          ./gradlew resolveDependencies -g $(GRADLE_HOME)
+          ./gradlew resolveDependencies -g $GRADLE_HOME
