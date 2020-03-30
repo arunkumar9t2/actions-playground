@@ -27,5 +27,12 @@ jobs:
           ./gradlew resolveDependencies --no-daemon -g $GRADLE_HOME
           find $GRADLE_HOME -name "*.lock" -type f -delete
           find $GRADLE_HOME -name "gc.properties" -type f -delete
-          sudo apt-get install tree
-          tree $GRADLE_HOME
+
+      - name: Publish to Registry
+          uses: elgohr/Publish-Docker-Github-Action@master
+          with:
+            name: ${{ github.actor }}/$GITHUB_REPOSITORY/gradle-docker
+            username: ${{ github.actor }}
+            password: $GITHUB_TOKEN
+            registry: docker.pkg.github.com
+            dockerfile: Dockerfile
