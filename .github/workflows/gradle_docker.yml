@@ -31,7 +31,7 @@ jobs:
       - name: Publish to Registry
         uses: elgohr/Publish-Docker-Github-Action@2.14
         with:
-          name: ${{ github.actor }}/${{ github.repository }}/gradledockerimage
+          name: ${{ github.repository }}/gradledockerimage
           username: ${{ github.actor }}
           password: $GITHUB_TOKEN
           registry: docker.pkg.github.com
