@@ -19,7 +19,7 @@ jobs:
         run: |
           cd docker
           CURRENT_DIR=$(pwd)
-          GRADLE_HOME=$(CURRENT_DIR/cache/.gradle)
+          GRADLE_HOME="$(CURRENT_DIR)/cache/.gradle"
           echo $GRADLE_HOME
           cd ..
           ./gradlew resolveDependencies -g $(GRADLE_HOME)
