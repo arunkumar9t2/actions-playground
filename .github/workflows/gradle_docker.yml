@@ -29,7 +29,7 @@ jobs:
           find $GRADLE_HOME -name "gc.properties" -type f -delete
 
       - name: Publish to Registry
-        uses: elgohr/Publish-Docker-Github-Action@master
+        uses: elgohr/Publish-Docker-Github-Action@2.14
         with:
           name: ${{ github.actor }}/${{ github.repository }}/gradle-docker
           username: ${{ github.actor }}
