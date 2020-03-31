@@ -18,6 +18,7 @@ jobs:
       - name: Set gradle permissions
         run: |
           chmod +x ./gradlew
+          echo $GRADLE_USER_HOME
 
       - name: Build project
         run: |
