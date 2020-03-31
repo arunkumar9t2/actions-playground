@@ -24,11 +24,11 @@ jobs:
       - name: Prepare gradle cache
         run: |
           cd docker
-          export GRADLE_HOME="$(pwd)/cache/.gradle"
+          export GRADLE_USER_HOME="$(pwd)/cache/.gradle"
           cd ..
-          ./gradlew resolveDependencies --no-daemon -g $GRADLE_HOME
-          find $GRADLE_HOME -name "*.lock" -type f -delete
-          find $GRADLE_HOME -name "gc.properties" -type f -delete
+          ./gradlew resolveDependencies --no-daemon -g $GRADLE_USER_HOME
+          find $GRADLE_USER_HOME -name "*.lock" -type f -delete
+          find $GRADLE_USER_HOME -name "gc.properties" -type f -delete
 
       - name: Publish to Registry
         uses: elgohr/Publish-Docker-Github-Action@2.14
