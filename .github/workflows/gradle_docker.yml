@@ -22,7 +22,6 @@ jobs:
         run: |
           cd docker
           export GRADLE_HOME="$(pwd)/cache/.gradle"
-          echo $GRADLE_HOME
           cd ..
           ./gradlew resolveDependencies --no-daemon -g $GRADLE_HOME
           find $GRADLE_HOME -name "*.lock" -type f -delete
@@ -30,10 +29,12 @@ jobs:
 
       - name: Publish to Registry
         uses: elgohr/Publish-Docker-Github-Action@2.14
+        env:
+          GRADLE_USER_HOME: /root/.gradle
         with:
-          name: ${{ github.repository }}/gradledockerimage
-          username: ${{ github.actor }}
+          name: arunkumar9t2/actions-playground
+          username: arunkumar9t2
           password: ${{ secrets.DOCKER_TOKEN }}
-          registry: docker.pkg.github.com
+          registry: registry.hub.docker.com
           workdir: ${{ github.workspace }}/docker
           dockerfile: Dockerfile
