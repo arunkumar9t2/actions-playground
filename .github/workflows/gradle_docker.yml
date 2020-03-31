@@ -1,4 +1,4 @@
-name: Docker image update workflow
+name: Gradle docker image workflow
 
 on:
   push:
