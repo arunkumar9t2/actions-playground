@@ -17,5 +17,3 @@ dependencies {
 application {
     mainClassName = 'dev.arunkumar.actions.AppKt'
 }
-
-apply from: "docker/resolve-dependencies.gradle"
