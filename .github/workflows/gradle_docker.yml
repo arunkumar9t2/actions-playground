@@ -6,6 +6,7 @@ on:
       - master
     paths:
       - '.github/workflows/gradle_docker.yml'
+      - 'docker/*'
 
 jobs:
   build:
@@ -31,8 +32,6 @@ jobs:
 
       - name: Publish to Registry
         uses: elgohr/Publish-Docker-Github-Action@2.14
-        env:
-          GRADLE_USER_HOME: /root/.gradle
         with:
           name: arunkumar9t2/actions-playground
           username: arunkumar9t2

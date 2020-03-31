@@ -6,4 +6,6 @@ WORKDIR .
 
 RUN ls -la
 
+ENV GRADLE_USER_HOME=/root/.gradle
+
 COPY ./cache/.gradle /root/.gradle
