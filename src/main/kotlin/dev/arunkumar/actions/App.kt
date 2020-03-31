@@ -6,7 +6,7 @@ package dev.arunkumar.actions
 class App {
     val greeting: String
         get() {
-            return "Hello world."
+            return "Hello world!"
         }
 }
 
