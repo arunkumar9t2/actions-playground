@@ -7,6 +7,8 @@ on:
     paths:
       - '.github/workflows/gradle_docker.yml'
       - 'docker/*'
+      - '*/gradle-wrapper.properties'
+      - '*.gradle'
 
 jobs:
   build:
