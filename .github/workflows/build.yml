@@ -25,5 +25,4 @@ jobs:
 
       - name: Build project
         run: |
-          tree ~/.gradle
           ./gradlew build
