@@ -11,15 +11,15 @@ on:
       - '*.gradle'
 
 jobs:
-  build:
+  publish-docker:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Set up JDK 1.8
+      - name: Setup Java
         uses: actions/setup-java@v2
         with:
           distribution: 'adopt'
-          java-version: 1.8
+          java-version: 11
 
       - name: Set gradle permissions
         run: sudo chmod +x ./gradlew
@@ -41,5 +41,5 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: ghcr.io
-          workdir: ${{ github.workspace }}/docker
+          workdir: docker
           dockerfile: Dockerfile
