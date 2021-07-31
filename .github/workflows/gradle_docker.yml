@@ -37,8 +37,8 @@ jobs:
         uses: elgohr/Publish-Docker-Github-Action@2.14
         with:
           name: arunkumar9t2/actions-playground
-          username: arunkumar9t2
-          password: ${{ secrets.DOCKER_TOKEN }}
-          registry: registry.hub.docker.com
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: ghcr.io
           workdir: ${{ github.workspace }}/docker
           dockerfile: Dockerfile
