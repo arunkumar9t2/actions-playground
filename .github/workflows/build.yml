@@ -7,7 +7,11 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: registry.hub.docker.com/arunkumar9t2/actions-playground:latest
+    container:
+      image: ghcr.io/arunkumar9t2/actions-playground:latest
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v1
 
