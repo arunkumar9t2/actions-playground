@@ -23,3 +23,10 @@ jobs:
       - name: Build project
         run: |
           ./gradlew assemble
+
+      - uses: burrunan/gradle-cache-action@v1
+        name: Check with cache
+        with:
+          job-id: jdk8
+          arguments: :check
+          gradle-version: wrapper
