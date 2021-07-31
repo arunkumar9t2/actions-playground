@@ -28,6 +28,7 @@ jobs:
           cd docker
           export GRADLE_USER_HOME="$(pwd)/cache/.gradle"
           cd ..
+          ./gradlew --version --no-daemon -g $GRADLE_USER_HOME
           ./gradlew resolveDependencies --no-daemon -g $GRADLE_USER_HOME
           find $GRADLE_USER_HOME -name "*.lock" -type f -delete
           find $GRADLE_USER_HOME -name "gc.properties" -type f -delete

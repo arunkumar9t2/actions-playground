@@ -86,3 +86,5 @@ lint/tmp/
 # lint/reports/
 
 docker/cache
+/.idea/compiler.xml
+/.idea/runConfigurations.xml
