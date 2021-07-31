@@ -1,10 +1,7 @@
-FROM reactivecircus/android-sdk:latest
+FROM reactivecircus/android-sdk-30:latest
 
-MAINTAINER Arunkumar "hi@arunkumar.dev"
-
+LABEL org.opencontainers.image.authors="hi@arunkumar.dev"
 LABEL org.opencontainers.image.source="https://github.com/arunkumar9t2/actions-playground"
-
-WORKDIR .
 
 ENV GRADLE_USER_HOME=/root/.gradle
 
