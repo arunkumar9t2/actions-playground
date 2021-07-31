@@ -17,6 +17,8 @@ jobs:
         run: |
           chmod +x ./gradlew
           echo $GRADLE_USER_HOME
+          sudo apt update
+          sudo apt install tree
 
       - uses: burrunan/gradle-cache-action@v1
         name: Check with cache
@@ -25,7 +27,5 @@ jobs:
 
       - name: Build project
         run: |
-          sudo apt update
-          sudo apt install tree
           tree ~/.gradle
           ./gradlew build
