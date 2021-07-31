@@ -16,12 +16,13 @@ jobs:
       - name: Set gradle permissions
         run: |
           chmod +x ./gradlew
+          git status
           echo $GRADLE_USER_HOME
 
       - uses: burrunan/gradle-cache-action@v1
         name: Check with cache
         with:
-          job-id: jdk8
+          job-id: build
 
       - name: Build project
         run: |
