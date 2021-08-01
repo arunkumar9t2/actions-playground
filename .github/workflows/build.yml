@@ -16,18 +16,6 @@ jobs:
       - name: Gradle Wrapper Validation
         uses: gradle/wrapper-validation-action@v1
 
-      - name: Set gradle permissions
-        run: |
-          chmod +x ./gradlew
-
-      - name: Build project
-        run: |
-          ./gradlew build
-          echo $GRADLE_USER_HOME
-          mkdir -p ~/.gradle
-          cd ~/.gradle
-          echo $(pwd)
-
       - uses: burrunan/gradle-cache-action@v1
         name: Build
         with:
