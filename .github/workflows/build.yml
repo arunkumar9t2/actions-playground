@@ -19,8 +19,15 @@ jobs:
       - name: Set gradle permissions
         run: |
           chmod +x ./gradlew
-          git status
 
       - name: Build project
         run: |
           ./gradlew build
+
+      - uses: burrunan/gradle-cache-action@v1
+        name: Build
+        with:
+          job-id: build
+          gradle-version: wrapper
+          read-only: ${{ github.ref != 'refs/heads/main' }}
+          arguments: build
