@@ -19,7 +19,7 @@ jobs:
       - uses: burrunan/gradle-cache-action@v1
         name: Build
         with:
-          job-id: build --scan
+          job-id: build
           gradle-version: wrapper
           read-only: ${{ github.ref != 'refs/heads/master' }}
-          arguments: build
+          arguments: build --scan
