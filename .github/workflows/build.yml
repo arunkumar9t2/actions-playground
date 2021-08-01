@@ -29,5 +29,5 @@ jobs:
         with:
           job-id: build
           gradle-version: wrapper
-          read-only: ${{ github.ref != 'refs/heads/main' }}
+          read-only: ${{ github.ref != 'refs/heads/master' }}
           arguments: build
