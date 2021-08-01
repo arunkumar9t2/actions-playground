@@ -23,6 +23,7 @@ jobs:
       - name: Build project
         run: |
           ./gradlew build
+          echo $GRADLE_USER_HOME
 
       - uses: burrunan/gradle-cache-action@v1
         name: Build
