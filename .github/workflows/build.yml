@@ -5,7 +5,7 @@ on: [ push, pull_request ]
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: ${{ startsWith(github.ref, 'refs/tags/v') }}
+    if: startsWith(github.ref, "refs/tags/v")
     container:
       image: ghcr.io/${{ github.repository }}:latest
       credentials:
