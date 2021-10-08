@@ -16,7 +16,7 @@ jobs:
       - name: Gradle Wrapper Validation
         uses: gradle/wrapper-validation-action@v1
 
-      - run: echo "${{ github.ref }}"
+      - run: echo "${{ startsWith(github.ref, 'refs/tags/v') }}"
 
       - uses: burrunan/gradle-cache-action@v1
         name: Build
